@@ -1,0 +1,9 @@
+%h1 Talent #{@name}
+- if @skill == nil
+  Ce talent n'est pas dans la base de données.
+  %br
+  = link_to "L'ajouter", :action => 'add', :name => @name
+- else
+  %ul
+    %li Nom : #{@skill.name}
+    %li Date d'ajout : #{@skill.created_at}

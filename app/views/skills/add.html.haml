@@ -1,0 +1,13 @@
+- if @name != nil && !@name.empty?
+  - if @skill != nil
+    Le talent
+    = link_to @skill.name, @skill
+    a bien été ajouté.
+  - else
+    Le talent #{@name} n'existe pas.
+  %br
+
+%h1 Ajout de talent
+= form_tag "/skills/add", :method => :get do
+  = text_field_tag :name
+  = submit_tag "Ajouter"

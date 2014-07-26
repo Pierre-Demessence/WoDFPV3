@@ -1,0 +1,4 @@
+%h1 Liste des talents
+%ul
+  - @skills.each do |skill|
+    %li= link_to skill.name, skill

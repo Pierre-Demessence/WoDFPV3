@@ -59,3 +59,6 @@ gem 'delayed_job'
 
 # To parse HTML
 gem 'nokogiri'
+
+# To enable MTI (Mutile Table Inheritance)
+gem 'active_record-acts_as'

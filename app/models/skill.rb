@@ -1,5 +1,5 @@
 class Skill < ActiveRecord::Base
-  validates_uniqueness_of :name
+  acts_as :bonusable
   
   has_many :race_skills
   has_many :races, :through => :race_skills

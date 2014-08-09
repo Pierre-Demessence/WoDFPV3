@@ -1,7 +1,7 @@
 class SkillsController < ApplicationController
   def view
     @name = params[:name]
-    @skill = Skill.find_by_name(@name)
+    @skill = Skill.where(name: @name).first
   end
 
   def add
@@ -14,14 +14,14 @@ class SkillsController < ApplicationController
         pieces = doc.css("h1").text.split
         pieces.delete_at(0)
         skill_name = pieces.join(' ')
-        Skill.find_by_name(skill_name).delete if Skill.find_by_name(skill_name)
+        Skill.where(name: @name).first.delete if Skill.where(name: @name).first
         @skill = Skill.create(:name => skill_name)
       end
     end
   end
 
   def list
-    @skills = Skill.all.sort_by { |skill| skill.name}
+    @skills = Skill.all.sort_by { |skill| skill.name }
   end
     
 end

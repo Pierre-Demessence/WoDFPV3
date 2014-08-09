@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724212011) do
+ActiveRecord::Schema.define(version: 20140809123057) do
+
+  create_table "bonus", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bonusables", force: true do |t|
+    t.string   "name"
+    t.integer  "actable_id"
+    t.string   "actable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bonusables", ["name"], name: "index_bonusables_on_name", unique: true
 
   create_table "classes", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,7 +55,6 @@ ActiveRecord::Schema.define(version: 20140724212011) do
   end
 
   create_table "skills", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'builder/form'
-
-  get 'builder/sheet'
-
   get 'skills/view/:name' => 'skills#view', as: 'skill'
 
   get 'skills/add/(:name)' => 'skills#add'
@@ -15,8 +11,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'builder#form'
-
-  resources :heros
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

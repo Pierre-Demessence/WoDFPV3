@@ -60,5 +60,11 @@ gem 'delayed_job'
 # To parse HTML
 gem 'nokogiri'
 
-# To enable MTI (Mutile Table Inheritance)
+# To enable MTI (Mutiple Table Inheritance)
 gem 'active_record-acts_as'
+
+# Allow Model to exist without a table (but with relation and all the stuff)
+# gem 'activerecord-tableless'
+
+# Easy forms
+gem 'simple_form'
